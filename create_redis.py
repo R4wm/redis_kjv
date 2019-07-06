@@ -14,27 +14,6 @@ import os
 import sys
 import redis
 
-<<<<<<< HEAD:utils/create_redis.py
-###########
-# Globals #
-###########
-TEXT = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
-    'data',
-    'bible.txt')
-
-R = redis.Redis(host='localhost', port=6379)
-
-##########
-# sanity #
-##########
-def sanity():
-    if not os.path.exists(TEXT):
-        print('Cant fine {}'.format(TEXT))
-        sys.exit(1)
-
-=======
-
 ###########
 # Globals #
 ###########
@@ -50,7 +29,6 @@ def sanity():
         print('Cant find {}'.format(TEXT))
         sys.exit(1)
 
->>>>>>> cleanup:create_redis.py
 
 ####################
 # if_numbered_book #
@@ -96,10 +74,7 @@ def push_verse_to_redis(a_verse_list=None):
     R.set(redis_key, ' '.join(broken_line[2:]))
 
     return broken_line
-<<<<<<< HEAD:utils/create_redis.py
-=======
 
->>>>>>> cleanup:create_redis.py
 
 if __name__ == '__main__':
     sanity()
